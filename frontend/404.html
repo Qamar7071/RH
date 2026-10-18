@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found | RH Labs</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#F5F8FD;--ink:#0B1B33;--muted:#5A6A82;--line:#E2E8F1;--blue:#1D5BF0;--blue-dark:#1447C4;--blue-soft:#EAF1FE;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;display:grid;place-items:center;padding:24px max(20px,env(safe-area-inset-left,0px)) 24px max(20px,env(safe-area-inset-right,0px))}
+.card{width:min(520px,100%);background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px 32px;text-align:center;box-shadow:0 18px 44px -24px rgba(11,27,51,.35)}
+.mark{width:56px;height:56px;margin:0 auto 18px;border-radius:14px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:1.2rem}
+.code{margin:0;font-size:4.5rem;line-height:1;font-weight:800;letter-spacing:-.04em;color:var(--blue)}
+h1{margin:10px 0 8px;font-size:1.5rem}
+p{margin:0 0 26px;color:var(--muted);line-height:1.6}
+.row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:10px;font-weight:700;text-decoration:none;border:1.5px solid transparent}
+.primary{background:var(--blue);color:#fff}.primary:hover{background:var(--blue-dark)}
+.outline{border-color:var(--line);color:var(--ink);background:#fff}.outline:hover{border-color:var(--blue);color:var(--blue)}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="mark" aria-hidden="true">RH</div>
+  <p class="code">404</p>
+  <h1>This page could not be found</h1>
+  <p>The link may be old or mistyped. Go back to the RH Labs homepage, or tell us what you want to build.</p>
+  <div class="row">
+    <a class="btn primary" id="home" href="/">Go to Homepage</a>
+    <a class="btn outline" id="contact" href="/#contact">Contact Us</a>
+  </div>
+</main>
+<script>
+/* On a github.io project address (username.github.io/repo/), point the buttons at the repo folder */
+(function () {
+  if (!/\.github\.io$/.test(location.hostname)) return;
+  var first = location.pathname.split("/")[1];
+  if (!first) return;
+  var base = "/" + first + "/";
+  document.getElementById("home").href = base;
+  document.getElementById("contact").href = base + "#contact";
+})();
+</script>
+</body>
+</html>

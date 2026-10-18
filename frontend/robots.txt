@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://qamar7071.github.io/rh-labs/sitemap.xml
